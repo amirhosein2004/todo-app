@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TODO App</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Markazi+Text&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="preload" href="./assets/images/icon-check.svg" as="image" type="image/svg+xml" crossorigin="anonymous">
+</head>
+
+<body>
+  <header class="card">
+    <h1 tabindex="0">لیست وظایف</h1>
+    <button id="theme-switcher" aria-label="تغییر تم" title="تغییر تم">
+      <img src="./assets/images/icon-sun.svg" alt="Change color theme" />
+    </button>
+  </header>
+  <main>
+    <section class="card add" aria-label="افزودن وظیفه">
+      <div class="cb-container">
+        <button id="add-btn" aria-label="افزودن وظیفه جدید" title="افزودن وظیفه جدید">+</button>
+      </div>
+      <div class="txt-container">
+        <label for="addt" class="sr-only">افزودن وظیفه جدید</label>
+        <input type="text" class="txt-input" placeholder="افزودن وظیفه جدید..." spellcheck="false" autocomplete="off" id="addt" dir="rtl" aria-label="متن وظیفه جدید" />
+      </div>
+    </section>
+    <ul class="todos" aria-live="polite" aria-label="لیست وظایف">
+    </ul>
+    <section class="card stat" aria-label="آمار و فیلتر وظایف">
+      <p class="corner"><span id="items-left">0</span> مورد باقی مانده</p>
+      <nav class="filter" aria-label="فیلتر وظایف">
+        <button id="all" class="on" aria-pressed="true">همه</button>
+        <button id="active" aria-pressed="false">فعال</button>
+        <button id="completed" aria-pressed="false">تکمیل</button>
+      </nav>
+      <div class="corner">
+        <button id="clear-completed" aria-label="حذف وظایف تکمیل شده" title="حذف وظایف تکمیل شده">حذف تکمیل شده ها</button>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>برای مرتب کردن وظایف می‌توانید وظیفه موردنظر را بکشید و رها کنید - Drag And Drop</p>
+  </footer>
+  <div id="toast" class="toast" role="status" aria-live="polite" style="display:none;"></div>
+  <script src="./js/scripts.js"></script>
+</body>
+
+</html>
